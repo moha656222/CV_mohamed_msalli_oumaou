@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Msalli Oumaou - Portfolio IT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <button class="logo" onclick="scrollToSection('inicio')">MM</button>
+                
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <button class="nav-link" data-section="inicio">Inicio</button>
+                    <button class="nav-link" data-section="sobre-mi">Sobre mí</button>
+                    <button class="nav-link" data-section="habilidades">Habilidades</button>
+                    <button class="nav-link" data-section="proyectos">Proyectos</button>
+                    <button class="nav-link" data-section="formacion">Formación</button>
+                    <button class="nav-link" data-section="contacto">Contacto</button>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="navMobile">
+                <button class="nav-link" data-section="inicio">Inicio</button>
+                <button class="nav-link" data-section="sobre-mi">Sobre mí</button>
+                <button class="nav-link" data-section="habilidades">Habilidades</button>
+                <button class="nav-link" data-section="proyectos">Proyectos</button>
+                <button class="nav-link" data-section="formacion">Formación</button>
+                <button class="nav-link" data-section="contacto">Contacto</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="avatar">MM</div>
+                <h1 class="hero-title">Mohamed Msalli Oumaou</h1>
+                <p class="hero-subtitle">Estudiante de Sistemas Microinformáticos y Redes</p>
+                <p class="hero-role">Soporte IT, redes y ciberseguridad junior</p>
+                <p class="hero-description">Me estoy formando en administración de sistemas, montaje y mantenimiento de equipos, redes, Linux, Windows y seguridad informática. Me interesa aplicar mis conocimientos en prácticas o en un puesto junior donde pueda seguir creciendo técnicamente y aportar soluciones reales.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('contacto')">
+                        Contactar
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-outline" onclick="scrollToSection('proyectos')">Ver Proyectos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre mí</h2>
+            <div class="about-content">
+                <div class="card">
+                    <p class="about-text">Soy estudiante de Grado Medio SMR con interés en la informática, la administración de sistemas, el soporte técnico, las redes y la ciberseguridad. Disfruto aprendiendo con práctica real: configurando equipos, resolviendo incidencias, usando terminal Linux, trabajando con Windows y desarrollando pequeños proyectos con Python y Arduino. Busco una oportunidad donde seguir mejorando mis habilidades técnicas y ganar experiencia profesional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="skills-grid" id="skillsGrid">
+                <!-- Skills will be dynamically generated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos</h2>
+            <p class="section-subtitle">Trabajo organizado en tres áreas principales de desarrollo técnico</p>
+            
+            <!-- Project Categories -->
+            <div class="project-categories">
+                <button class="category-btn active" data-category="all">Todos</button>
+                <button class="category-btn" data-category="scripts">Scripts</button>
+                <button class="category-btn" data-category="webs">Webs</button>
+                <button class="category-btn" data-category="apps">Apps / APK</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="card project-card" data-category="scripts">
+                    <span class="project-category-badge">Scripts</span>
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <h3 class="project-title">Script de automatización con Python</h3>
+                    <p class="project-description">Desarrollo de pequeños programas para automatizar tareas básicas y practicar lógica de programación aplicada a escenarios reales.</p>
+                    <div class="project-tools">
+                        <span class="badge">Python</span>
+                        <span class="badge">VS Code</span>
+                        <span class="badge">Automatización</span>
+                    </div>
+                    <div class="project-result">
+                        <strong>Resultado:</strong> Mejora de la lógica, automatización simple y aprendizaje de estructuras básicas.
+                    </div>
+                </div>
+
+                <div class="card project-card" data-category="scripts">
+                    <span class="project-category-badge">Scripts / Redes</span>
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="5" width="6" height="6"/>
+                            <rect x="16" y="5" width="6" height="6"/>
+                            <rect x="9" y="13" width="6" height="6"/>
+                            <path d="M5 11v2M19 11v2M12 13V8"/>
+                        </svg>
+                    </div>
+                    <h3 class="project-title">Laboratorio de red en Packet Tracer</h3>
+                    <p class="project-description">Diseño y configuración de red local básica con varios dispositivos, comprobando conectividad, direccionamiento IP y estructura de red.</p>
+                    <div class="project-tools">
+                        <span class="badge">Packet Tracer</span>
+                        <span class="badge">Configuración IP</span>
+                        <span class="badge">Diagnóstico</span>
+                    </div>
+                    <div class="project-result">
+                        <strong>Resultado:</strong> Red funcional y documentación básica de la práctica.
+                    </div>
+                </div>
+
+                <div class="card project-card project-placeholder" data-category="webs">
+                    <span class="project-category-badge badge-future">Webs - Próximamente</span>
+                    <div class="project-icon project-icon-future">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="project-title">Proyectos web en desarrollo</h3>
+                    <p class="project-description">Portfolio personal, landing pages y aplicaciones web utilizando HTML, CSS y JavaScript moderno.</p>
+                    <div class="project-tools">
+                        <span class="badge badge-outline">HTML/CSS</span>
+                        <span class="badge badge-outline">JavaScript</span>
+                        <span class="badge badge-outline">Responsive</span>
+                    </div>
+                </div>
+
+                <div class="card project-card project-placeholder" data-category="apps">
+                    <span class="project-category-badge badge-future">Apps - Próximamente</span>
+                    <div class="project-icon project-icon-future">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                            <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <h3 class="project-title">Aplicaciones móviles</h3>
+                    <p class="project-description">Desarrollo de aplicaciones Android (APK) enfocadas en herramientas útiles para técnicos de IT y administración de sistemas.</p>
+                    <div class="project-tools">
+                        <span class="badge badge-outline">Android</span>
+                        <span class="badge badge-outline">Java/Kotlin</span>
+                        <span class="badge badge-outline">APK</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certificates Section -->
+    <section id="formacion" class="education">
+        <div class="container">
+            <h2 class="section-title">Formación y Certificados</h2>
+            <div class="education-grid">
+                <div class="education-column">
+                    <h3 class="column-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                        Formación Académica
+                    </h3>
+                    <div class="card edu-card">
+                        <h4 class="edu-title">Grado Medio en Sistemas Microinformáticos y Redes (SMR)</h4>
+                        <p class="edu-institution">Formación reglada</p>
+                        <span class="badge badge-active">En curso</span>
+                    </div>
+                    <div class="card edu-card">
+                        <h4 class="edu-title">Formación complementaria</h4>
+                        <p class="edu-institution">Cursos y aprendizaje autónomo</p>
+                        <p class="edu-description">Informática, redes, Linux, programación y ciberseguridad mediante prácticas, cursos y aprendizaje autónomo.</p>
+                    </div>
+                </div>
+
+                <div class="education-column">
+                    <h3 class="column-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="7"/>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                        </svg>
+                        Certificaciones
+                    </h3>
+                    <div class="certificates-grid">
+                        <!-- Certificate Card 1 -->
+                        <div class="cert-card">
+                            <div class="cert-card-inner">
+                                <div class="cert-thumbnail">
+                                    <img src="https://customer-assets.emergentagent.com/job_dev-profile-193/artifacts/mrgrts3y_certificate_1775761175935.png" alt="Certificado SENATI">
+                                    <div class="cert-overlay">
+                                        <button class="cert-btn cert-btn-view" onclick="openCertificateModal(0)">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                                <circle cx="12" cy="12" r="3"/>
+                                            </svg>
+                                            Ver
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="cert-info">
+                                    <h4 class="cert-card-title">Calidad en la Atención al Cliente</h4>
+                                    <p class="cert-issuer">
+                                        <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                        </svg>
+                                        Cursa
+                                    </p>
+                                    <p class="cert-date">
+                                        <svg class="cert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                            <line x1="16" y1="2" x2="16" y2="6"/>
+                                            <line x1="8" y1="2" x2="8" y2="6"/>
+                                            <line x1="3" y1="10" x2="21" y2="10"/>
+                                        </svg>
+                                        24/03/2023
+                                    </p>
+                                    <p class="cert-description">Certificación en atención al cliente, comunicación efectiva y gestión de relaciones profesionales.</p>
+                                    <div class="cert-actions">
+                                        <button class="cert-btn-primary" onclick="openCertificateModal(0)">
+                                            Ver Certificado
+                                        </button>
+                                        <a href="https://cursa.app/es/verificar-certificado" target="_blank" class="cert-btn-secondary">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="9 11 12 14 22 4"/>
+                                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                                            </svg>
+                                            Verificar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add more certificate cards here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="card">
+                    <p class="contact-intro">¿Interesado en colaborar o conocer más sobre mi trabajo? ¡No dudes en contactarme!</p>
+                    <div class="contact-grid">
+                        <a href="mailto:studmohammad@gmail.com" class="contact-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span>Email</span>
+                        </a>
+                        <a href="tel:+34624335571" class="contact-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>Teléfono</span>
+                        </a>
+                        <a href="https://linkedin.com/in/mohamed-msalli" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/mohamedmsalli" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <div class="contact-item contact-location">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>Madrid, España</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 Mohamed Msalli Oumaou. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="mailto:studmohammad@gmail.com" class="footer-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/mohamed-msalli" target="_blank" rel="noopener noreferrer" class="footer-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/mohamedmsalli" target="_blank" rel="noopener noreferrer" class="footer-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeCertificateModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalCertImage" src="" alt="Certificado" class="modal-cert-image">
+                    <div class="modal-zoom-controls">
+                        <button onclick="zoomCertificate('in')" class="zoom-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                                <line x1="11" y1="8" x2="11" y2="14"/>
+                                <line x1="8" y1="11" x2="14" y2="11"/>
+                            </svg>
+                        </button>
+                        <button onclick="zoomCertificate('out')" class="zoom-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                                <line x1="8" y1="11" x2="14" y2="11"/>
+                            </svg>
+                        </button>
+                        <button onclick="zoomCertificate('reset')" class="zoom-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 4v6h6"/>
+                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h3 id="modalCertTitle">Certificado</h3>
+                    <p id="modalCertIssuer"></p>
+                    <p id="modalCertDate"></p>
+                    <a id="modalCertVerify" href="#" target="_blank" class="modal-verify-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 11 12 14 22 4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                        Verificar Autenticidad
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

@@ -5,78 +5,63 @@ const skillsData = [
     {
         category: "Redes",
         details: [
-            { name: "Packet Tracer", level: 85 },
-            { name: "Direccionamiento IP", level: 80 },
-            { name: "Subnetting y cálculo de subredes", level: 75 },
+            { name: "Rastreador de paquetes (Packet Tracer)", level: 90 },
+            { name: "Dirección IP", level: 80 },
             { name: "VLANs", level: 70 },
-            { name: "Ping, tracert y diagnóstico", level: 85 },
-            { name: "Configuración básica de routers", level: 70 },
-            { name: "Configuración básica de switches", level: 75 },
-            { name: "Resolución de fallos de red", level: 75 },
-            { name: "Comandos de red (ipconfig, netstat)", level: 80 }
+            { name: "Ping, tracert y diagnóstico", level: 95 },
+            { name: "Configuración básica de enrutadores", level: 95 },
+            { name: "Configuración básica de switches", level: 95 },
+            { name: "Resolución de fallos de red", level: 85 },
+            { name: "Comandos de red (ipconfig, nmap)", level: 85 }
         ]
     },
     {
         category: "Mantenimiento",
         details: [
-            { name: "Montaje y desmontaje de PC", level: 90 },
-            { name: "Limpieza interna de equipos", level: 85 },
-            { name: "Cambio de pasta térmica", level: 80 },
-            { name: "Instalación de RAM", level: 90 },
-            { name: "Cambio de SSD/HDD", level: 85 },
-            { name: "Diagnóstico básico de fallos", level: 80 },
-            { name: "Mantenimiento preventivo", level: 85 },
-            { name: "Sustitución de componentes hardware", level: 85 }
+            { name: "Montaje y desmontaje de PC", level: 100 },
+            { name: "Limpieza interna de equipos", level: 100 },
+            { name: "Cambio de pasta térmica", level: 100 },
+            { name: "Instalación de RAM", level: 100 },
+            { name: "Cambio de SSD/HDD", level: 100 },
+            { name: "Diagnóstico básico de fallos", level: 95 },
+            { name: "Mantenimiento preventivo", level: 95 },
+            { name: "Sustitución de componentes hardware", level: 100 }
         ]
     },
     {
         category: "Sistemas Operativos",
         details: [
-            { name: "Windows 10/11", level: 85 },
-            { name: "Ubuntu/Linux", level: 75 },
-            { name: "Instalación de sistemas operativos", level: 85 },
+            { name: "Windows 10/11", level: 90 },
+            { name: "Ubuntu/Linux", level: 95 },
+            { name: "Instalación de sistemas operativos", level: 95 },
             { name: "Gestión de usuarios y permisos", level: 80 },
-            { name: "Configuración básica del sistema", level: 80 },
-            { name: "Terminal/CMD", level: 75 },
+            { name: "Configuración básica del sistema", level: 85 },
+            { name: "Terminal/CMD", level: 85 },
             { name: "Resolución de problemas del sistema", level: 75 }
         ]
     },
     {
-        category: "Programación",
+        category: "Edición de Video",
         details: [
-            { name: "Python básico", level: 70 },
-            { name: "Arduino C/C++", level: 65 },
-            { name: "Scripts de automatización", level: 70 },
-            { name: "Lógica de programación", level: 75 },
-            { name: "Git y GitHub básico", level: 60 },
-            { name: "Depuración de código", level: 65 }
-        ]
-    },
-    {
-        category: "Ciberseguridad",
-        details: [
-            { name: "Conceptos básicos de seguridad", level: 75 },
-            { name: "Buenas prácticas de seguridad", level: 80 },
-            { name: "Configuración de firewall básico", level: 65 },
-            { name: "Antivirus y antimalware", level: 75 },
-            { name: "Backup y recuperación de datos", level: 70 },
-            { name: "Gestión segura de contraseñas", level: 85 },
-            { name: "Detección de phishing", level: 80 },
-            { name: "Políticas de seguridad básicas", level: 65 }
+            { name: "Efectos visuales y transiciones", level: 80 },
+            { name: "Efectos de sonido y mezcla", level: 75 },
+            { name: "Cortes y sincronización", level: 85 },
+            { name: "Animaciones y motion graphics", level: 70 },
+            { name: "Corrección de color", level: 75 },
+            { name: "Edición de audio", level: 80 },
+            { name: "Exportación y renderizado", level: 85 }
         ]
     },
     {
         category: "Software y Herramientas",
         details: [
-            { name: "Packet Tracer", level: 85 },
-            { name: "VS Code", level: 80 },
+            { name: "Packet Tracer", level: 90 },
             { name: "Terminal Bash/CMD", level: 80 },
-            { name: "Herramientas ofimáticas (Office, Google Workspace)", level: 85 },
+            { name: "Herramientas ofimáticas (Office, Google Workspace)", level: 90 },
             { name: "OpenOffice", level: 80 },
-            { name: "GitHub Desktop", level: 65 },
-            { name: "Software de diagnóstico", level: 75 },
-            { name: "VirtualBox/VMware", level: 70 },
-            { name: "Excel (inventario y control)", level: 80 }
+            { name: "Software de diagnóstico", level: 80 },
+            { name: "VirtualBox/VMware", level: 75 },
+            { name: "Excel (inventario y control)", level: 85 }
         ]
     }
 ];

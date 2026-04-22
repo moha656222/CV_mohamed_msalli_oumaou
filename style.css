@@ -751,6 +751,32 @@ section {
 
 .project-result strong { color: var(--text-primary); }
 
+.project-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
 .section-subtitle {
     text-align: center;
     color: var(--text-secondary);

@@ -1120,6 +1120,33 @@
     handleResize();
     window.addEventListener("resize", handleResize);
 
+    /* Auto-rotación cada 4 segundos */
+    let autoRotateInterval;
+    function startAutoRotate() {
+      stopAutoRotate();
+      autoRotateInterval = setInterval(() => {
+        nextCard();
+      }, 4000);
+    }
+    function stopAutoRotate() {
+      if (autoRotateInterval) clearInterval(autoRotateInterval);
+    }
+    startAutoRotate();
+
+    /* Pausar al interactuar, reanudar después */
+    const interactionEvents = ['click', 'touchstart', 'mousedown', 'keydown'];
+    let pauseTimeout;
+    function pauseAutoRotate() {
+      stopAutoRotate();
+      clearTimeout(pauseTimeout);
+      pauseTimeout = setTimeout(startAutoRotate, 4000);
+    }
+    interactionEvents.forEach(evt => {
+      prevBtn?.addEventListener(evt, pauseAutoRotate);
+      nextBtn?.addEventListener(evt, pauseAutoRotate);
+      document.querySelector('.carousel')?.addEventListener(evt, pauseAutoRotate);
+    });
+
     /* Sincronizar modo oscuro con el CV */
     const savedTheme = localStorage.getItem('theme') || 'dark';
     if (savedTheme === 'dark') {

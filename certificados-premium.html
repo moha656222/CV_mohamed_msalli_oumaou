@@ -10,6 +10,31 @@
        VARIABLES & RESET
     ═══════════════════════════════════════════════════ */
     :root {
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --surface-2: #f0ede6;
+      --ink: #1a1714;
+      --ink-2: #5a5550;
+      --ink-3: #9b9590;
+      --gold: #b59410;
+      --gold-light: #e6c645;
+      --gold-pale: #fdf8e7;
+      --teal: #0d7377;
+      --teal-pale: #e6f4f4;
+      --red: #c0392b;
+      --red-pale: #fdf0ef;
+
+      --card-radius: 1.25rem;
+      --transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      --btn-size: 2.75rem;
+
+      --shadow-card: 0 2px 8px rgba(26,23,20,0.07), 0 12px 32px rgba(26,23,20,0.09);
+      --shadow-hover: 0 8px 24px rgba(181,148,16,0.18), 0 24px 56px rgba(26,23,20,0.14);
+      --shadow-modal: 0 40px 120px rgba(26,23,20,0.28);
+    }
+
+    /* Modo oscuro — sincronizado con el CV */
+    body.dark {
       --bg: #0d0d0f;
       --surface: #141418;
       --surface-2: #1c1c22;
@@ -23,10 +48,6 @@
       --teal-pale: #071a1a;
       --red: #e05c4a;
       --red-pale: #1a0a08;
-
-      --card-radius: 1.25rem;
-      --transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      --btn-size: 2.75rem;
 
       --shadow-card: 0 2px 8px rgba(0,0,0,0.35), 0 12px 32px rgba(0,0,0,0.4);
       --shadow-hover: 0 8px 24px rgba(230,198,69,0.2), 0 24px 56px rgba(0,0,0,0.5);
@@ -1093,6 +1114,29 @@
     createIndicators();
     handleResize();
     window.addEventListener("resize", handleResize);
+
+    /* Sincronizar modo oscuro con el CV */
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark');
+    }
+    window.addEventListener('storage', e => {
+      if (e.key === 'theme') {
+        if (e.newValue === 'dark') {
+          document.body.classList.add('dark');
+        } else {
+          document.body.classList.remove('dark');
+        }
+      }
+    });
+    window.addEventListener('focus', () => {
+      const theme = localStorage.getItem('theme') || 'light';
+      if (theme === 'dark' && !document.body.classList.contains('dark')) {
+        document.body.classList.add('dark');
+      } else if (theme === 'light' && document.body.classList.contains('dark')) {
+        document.body.classList.remove('dark');
+      }
+    });
   </script>
 </body>
 </html>

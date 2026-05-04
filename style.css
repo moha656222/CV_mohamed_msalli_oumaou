@@ -258,19 +258,14 @@ body.dark .theme-toggle .icon-moon { display: none; }
     pointer-events: none;
 }
 
-.hero {
+.hero .container {
     position: relative;
-    overflow: hidden;
+    z-index: 1;
 }
 
-/* Modo Oscuro - partículas */
-:root:not([data-theme="light"]) #particles-js {
-    background: #0d0d0d;
-}
-
-/* Modo Claro - partículas */
-:root[data-theme="light"] #particles-js {
-    background: #f0f4f8;
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 /* ============================================
@@ -280,6 +275,18 @@ body.dark .theme-toggle .icon-moon { display: none; }
     padding: 8rem 1rem 4rem;
     background: var(--bg-secondary);
     animation: fadeInUp 0.8s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo para modo oscuro */
+:root:not([data-theme="light"]) .hero {
+    background: #0d0d0d;
+}
+
+/* Fondo para modo claro */
+:root[data-theme="light"] .hero {
+    background: #f0f4f8;
 }
 
 .hero-content {

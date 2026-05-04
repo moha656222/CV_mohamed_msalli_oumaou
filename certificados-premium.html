@@ -150,7 +150,7 @@
     }
 
     /* ═══════════════════════════════════════════════════
-       CAROUSEL CONTAINER — LÓGICA ORIGINAL, NO TOCAR
+       CAROUSEL CONTAINER
     ═══════════════════════════════════════════════════ */
     .carousel-container {
       position: relative;
@@ -205,7 +205,7 @@
       border-color: rgba(230,198,69,0.45);
     }
 
-    /* Top: imagen del badge */
+    /* MEJORA: Top contenedor de imagen */
     .card-badge-container {
       width: 100%;
       height: 65%;
@@ -213,9 +213,23 @@
       align-items: center;
       justify-content: center;
       background: var(--surface-2);
-      padding: 1rem;
+      padding: 1.25rem; /* Ajustado para que el certificado respire pero llene el espacio */
       position: relative;
       overflow: hidden;
+    }
+
+    /* MEJORA: Capa de desenfoque dinámico para llenar los "huequitos" (Glassmorphism) */
+    .card-badge-container::before {
+      content: '';
+      position: absolute;
+      inset: -30px; /* Margen negativo para evitar bordes blancos en el blur */
+      background-image: var(--bg-img);
+      background-size: cover;
+      background-position: center;
+      filter: blur(15px) saturate(140%);
+      opacity: 0.45; /* Fondo sutil para dar inmersión */
+      z-index: 0;
+      transition: transform 0.6s ease, opacity 0.4s ease;
     }
 
     /* Decorative corner accent */
@@ -224,21 +238,38 @@
       position: absolute;
       top: 0; right: 0;
       width: 60px; height: 60px;
-      background: linear-gradient(225deg, rgba(181,148,16,0.12) 0%, transparent 60%);
+      background: linear-gradient(225deg, rgba(181,148,16,0.15) 0%, transparent 60%);
+      z-index: 1;
+      pointer-events: none;
     }
 
+    /* MEJORA: Imagen del certificado (estilo documento real) */
     .card-badge {
       max-width: 100%;
       max-height: 100%;
       width: auto;
       height: auto;
       object-fit: contain;
-      transition: transform 0.4s ease;
-      filter: drop-shadow(0 4px 12px rgba(26,23,20,0.12));
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+      position: relative;
+      z-index: 2; /* Por encima del blur */
+      border-radius: 4px; /* Simula los bordes de un diploma real */
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      background: #ffffff; /* Evita que PNGs transparentes se pierdan con el fondo */
       cursor: zoom-in;
     }
 
-    .card:hover .card-badge { transform: scale(1.04); }
+    /* Hover animations mejoradas para imagen y fondo */
+    .card:hover .card-badge-container::before {
+      transform: scale(1.15);
+      opacity: 0.6;
+    }
+    
+    .card:hover .card-badge { 
+      transform: scale(1.06) translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.25), 0 4px 12px rgba(0,0,0,0.12);
+    }
 
     /* Bottom: info */
     .card-info {
@@ -323,7 +354,7 @@
 
     .card:hover .card-cta { opacity: 1; }
 
-    /* CAMBIO 1: Foco activo fuerte */
+    /* Foco activo fuerte */
     .card[data-active="true"] {
       border: 2px solid var(--gold) !important;
       box-shadow: 0 20px 60px rgba(230,198,69,0.3) !important;
@@ -336,7 +367,7 @@
       inset: 0;
       background: linear-gradient(135deg, transparent 40%, rgba(181,148,16,0.04) 100%);
       pointer-events: none;
-      z-index: 0;
+      z-index: 10;
     }
 
     /* ═══════════════════════════════════════════════════
@@ -786,14 +817,11 @@
     /* ═══════════════════════════════════════════════════
        RESPONSIVE
     ═══════════════════════════════════════════════════ */
-
-    /* Tablet grande / laptop pequeño */
     @media (max-width: 1024px) {
       main { padding: 3rem 1.5rem 5rem; }
       .carousel-container { padding: 0 4rem; }
     }
 
-    /* Tablet / modal apilado */
     @media (max-width: 900px) {
       .modal-content {
         grid-template-columns: 1fr;
@@ -809,7 +837,6 @@
       .modal-right { padding: 2rem; }
     }
 
-    /* Tablet portrait / móvil grande */
     @media (max-width: 700px) {
       .carousel-container { padding: 0 3rem; margin-top: 1rem; }
       .carousel { height: 320px; }
@@ -823,7 +850,6 @@
       .page-header { margin-bottom: 3rem; }
     }
 
-    /* Móvil */
     @media (max-width: 480px) {
       main { padding: 2rem 1rem 4rem; }
       .carousel-container { padding: 0 2.5rem; }
@@ -842,7 +868,6 @@
       .modal-meta-grid { grid-template-columns: 1fr; gap: 0.6rem 0; }
     }
 
-    /* Móvil pequeño */
     @media (max-width: 360px) {
       .carousel { height: 265px; }
       .card { width: 148px; height: 225px; margin-top: -112px; margin-left: -74px; }
@@ -871,7 +896,6 @@
     <footer>Haz clic en un certificado para ver todos los detalles y verificar su autenticidad</footer>
   </main>
 
-  <!-- MODAL -->
   <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
       <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
@@ -906,6 +930,11 @@
     </div>
   </div>
 
+  <div class="image-zoom-modal" id="imageZoomModal">
+    <button class="image-zoom-close" aria-label="Cerrar zoom">✕</button>
+    <img src="" alt="Zoom del certificado" id="zoomImage">
+  </div>
+
   <script>
     /* ═══════════════════════════════════════════════════
        DATOS — edita aquí tus certificados
@@ -929,7 +958,7 @@
     ];
 
     /* ═══════════════════════════════════════════════════
-       CARRUSEL — LÓGICA ORIGINAL, NO MODIFICAR
+       CARRUSEL
     ═══════════════════════════════════════════════════ */
     const carousel   = document.querySelector(".carousel");
     const prevBtn    = document.querySelector(".carousel-btn.prev");
@@ -954,8 +983,9 @@
         card.setAttribute("tabindex", "0");
         card.setAttribute("data-id", cert.id);
 
+        /* MEJORA: Se inyecta la imagen como variable CSS (--bg-img) para el fondo desenfocado */
         card.innerHTML = `
-          <div class="card-badge-container">
+          <div class="card-badge-container" style="--bg-img: url('${cert.badgeUrl}')">
             <img src="${cert.badgeUrl}" alt="Badge de ${cert.titleShort}" class="card-badge" loading="lazy">
           </div>
           <div class="card-info">
@@ -996,7 +1026,6 @@
       });
     }
 
-    /* updateCarousel — LÓGICA ORIGINAL, NO TOCAR */
     function updateCarousel() {
       cards.forEach((card, index) => {
         const offset = (index - current + total) % total;
@@ -1047,7 +1076,7 @@
     });
 
     /* ═══════════════════════════════════════════════════
-       MODAL
+       MODAL PRINCIPAL
     ═══════════════════════════════════════════════════ */
     const modalOverlay     = document.getElementById("modalOverlay");
     const modalClose       = document.getElementById("modalClose");
@@ -1182,12 +1211,15 @@
   </script>
 
   <script>
-    // Image zoom functionality
+    /* ═══════════════════════════════════════════════════
+       FUNCIONALIDAD DE ZOOM DE IMAGEN
+    ═══════════════════════════════════════════════════ */
     const imageZoomModal = document.getElementById('imageZoomModal');
     const zoomImage = document.getElementById('zoomImage');
     const imageZoomClose = document.querySelector('.image-zoom-close');
 
     function openImageZoom(src) {
+      if (!src) return;
       zoomImage.src = src;
       imageZoomModal.classList.add('open');
       document.body.style.overflow = 'hidden';
@@ -1198,11 +1230,18 @@
       document.body.style.overflow = '';
     }
 
-    // Add click events to all certificate images
-    document.querySelectorAll('.card-badge, .modal-cert-image').forEach(img => {
-      img.addEventListener('click', () => {
-        openImageZoom(img.src || img.dataset.src);
-      });
+    // Usamos delegación de eventos ya que las tarjetas se crean dinámicamente
+    document.body.addEventListener('click', e => {
+      if (e.target.classList.contains('card-badge') || e.target.classList.contains('modal-cert-image')) {
+        // Evitamos que al hacer clic en la imagen miniatura se abra primero el zoom y pise el modal normal
+        // Si quieres que la miniatura de la tarjeta NO haga zoom directamente, comenta la línea de abajo.
+        // openImageZoom(e.target.src || e.target.dataset.src);
+      }
+    });
+
+    // Solo activamos el zoom para la imagen dentro del modal principal
+    document.querySelector('.modal-cert-image')?.addEventListener('click', e => {
+       openImageZoom(e.target.src);
     });
 
     imageZoomClose?.addEventListener('click', closeImageZoom);

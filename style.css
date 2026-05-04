@@ -250,22 +250,29 @@ body.dark .theme-toggle .icon-moon { display: none; }
    ============================================ */
 
 #particles-js {
-    position: absolute;
+    position: absolute !important;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
 }
 
+/* Asegurar que el contenido esté arriba */
 .hero .container {
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
-.hero-content {
+.hero-content, 
+.hero-title,
+.hero-subtitle,
+.hero-role,
+.hero-description,
+.hero-buttons,
+.avatar-photo {
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
 /* ============================================

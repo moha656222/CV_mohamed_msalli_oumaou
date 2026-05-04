@@ -371,6 +371,11 @@ function applyTheme(theme) {
 themeToggle?.addEventListener('click', () => {
     const isDark = document.body.classList.toggle('dark');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    // Actualizar partículas al cambiar tema
+    if (typeof initParticles === 'function') {
+        setTimeout(initParticles, 150);
+    }
 });
 
 // ============================================
@@ -402,7 +407,8 @@ tsParticlesScript.onload = () => {
 document.head.appendChild(tsParticlesScript);
 
 function initParticles() {
-    const isDark = !document.documentElement.hasAttribute('data-theme') || document.documentElement.getAttribute('data-theme') === 'dark';
+    // Detectar tema correcto - usar la clase 'dark' del body
+    const isDark = document.body.classList.contains('dark');
     
     const config = isDark ? {
         background: { color: { value: '#0d0d0d' } },

@@ -220,64 +220,71 @@
     </section>
 
     <!-- Projects Section -->
+    <!-- Projects Section -->
     <section id="proyectos" class="projects">
         <div class="container">
             <h2 class="section-title">Proyectos</h2>
             <p class="section-subtitle">Trabajo organizado en tres áreas principales de desarrollo técnico</p>
 
-            <!-- Project Categories -->
-            <div class="project-categories">
-                <button class="category-btn active" data-category="all">Todos</button>
-                <button class="category-btn" data-category="scripts">Scripts</button>
-                <button class="category-btn" data-category="webs">Webs</button>
-                <button class="category-btn" data-category="apps">Apps / APK</button>
+            <!-- Project Filter -->
+            <div class="project-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="webs">Webs</button>
+                <button class="filter-btn" data-filter="scripts">Scripts</button>
+                <button class="filter-btn" data-filter="apps">Apps</button>
             </div>
 
-            <div class="projects-grid">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <polyline points="21 15 16 10 5 21"/>
-                        </svg>
+            <!-- Projects Grid Nuevo -->
+            <div class="projects-container">
+                <!-- Proyecto 1: Mejora de calidad -->
+                <article class="project-item" data-category="webs">
+                    <div class="project-card-new">
+                        <div class="project-icon-new">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                        </div>
+                        <div class="project-content-new">
+                            <h3>Mejora de calidad de imágenes</h3>
+                            <p>Herramienta web para aumentar resolución y mejorar calidad visual de forma rápida y sencilla. Experiencia limpia, moderna y fácil de usar.</p>
+                            <div class="project-tags">
+                                <span>Imagen</span>
+                                <span>IA</span>
+                                <span>Responsiva</span>
+                            </div>
+                            <a href="https://moha656222.github.io/Resolve_image_resolution/#app" target="_blank" class="project-link-new">Probar</a>
+                        </div>
                     </div>
-                    <h3 class="project-title">Mejora de la calidad de las imágenes</h3>
-                    <p class="project-description">Herramienta web pensada para aumentar la resolución y mejorar la calidad visual de imágenes de forma rápida y sencilla. Enfocada en una experiencia limpia, moderna y fácil de usar.</p>
-                    <div class="project-tools">
-                        <span class="badge">Imagen</span>
-                        <span class="badge">IA</span>
-                        <span class="badge">Responsiva</span>
-                    </div>
-                    <div class="project-result">
-                        <strong>Resultado:</strong> Proyecto orientado a utilidad real, con enfoque en mejora visual, simplicidad y buena presentación.
-                    </div>
-                    <div class="project-links">
-                        <a href="https://moha656222.github.io/Resolve_image_resolution/#app" class="project-link" target="_blank" rel="noopener noreferrer">Probar</a>
-                    </div>
-                </div>
+                </article>
 
-                <div class="card project-card" data-category="webs">
-                    <span class="project-category-badge">Webs</span>
-                    <div class="project-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 21l-6-6m6 6v-4.8m0 4.8h-4.8"/>
-                            <path d="M3 16.2V21m0 0h4.8M3 21l6-6"/>
-                            <path d="M21 7.8V3m0 0h-4.8M21 3l-6 6"/>
-                            <path d="M3 7.8V3m0 0h4.8M3 3l6 6"/>
-                        </svg>
+                <!-- Proyecto 2: Eliminador de fondo -->
+                <article class="project-item" data-category="webs">
+                    <div class="project-card-new">
+                        <div class="project-icon-new">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 21l-6-6m6 6v-4.8m0 4.8h-4.8"/>
+                                <path d="M3 16.2V21m0 0h4.8M3 21l6-6"/>
+                                <path d="M21 7.8V3m0 0h-4.8M21 3l-6 6"/>
+                                <path d="M3 7.8V3m0 0h4.8M3 3l6 6"/>
+                            </svg>
+                        </div>
+                        <div class="project-content-new">
+                            <h3>Eliminador de fondo</h3>
+                            <p>Aplicación web para quitar el fondo de una imagen automáticamente. Herramienta práctica, visual y fácil de usar.</p>
+                            <div class="project-tags">
+                                <span>Edición</span>
+                                <span>IA</span>
+                                <span>UX/UI</span>
+                            </div>
+                            <a href="#" class="project-link-new">Probar</a>
+                        </div>
                     </div>
-                    <h3 class="project-title">Eliminador de fondo de imágenes</h3>
-                    <p class="project-description">Aplicación web diseñada para quitar el fondo de una imagen de forma automática y dejar un resultado limpio en pocos pasos. Pensada como una herramienta práctica, visual y fácil de usar.</p>
-                    <div class="project-tools">
-                        <span class="badge">Edición</span>
-                        <span class="badge">IA</span>
-                        <span class="badge">UX/UI</span>
-                    </div>
-                    <div class="project-result">
-                        <strong>Resultado:</strong> Herramienta útil centrada en automatización visual, rapidez de uso y acabado profesional.
-                    </div>
-                    <div class="project-links">
-                        <a href="https://ejemplo.com/probar-quitar-fondo" class="project-link" target="_blank" rel="noopener noreferrer">Probar</a>
-                    </div>
-                </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Education Section -->

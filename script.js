@@ -317,32 +317,32 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ============================================
-// Filtro de proyectos
+// Filtro de proyectos - NUEVO
 // ============================================
-const categoryButtons = document.querySelectorAll('.category-btn');
-const projectCards = document.querySelectorAll('.project-card');
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
 
-categoryButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const category = btn.getAttribute('data-category');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
 
-        categoryButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+            // Actualizar botones activos
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-        projectCards.forEach(card => {
-            if (category === 'all') {
-                card.classList.remove('hidden');
-                setTimeout(() => card.style.opacity = '1', 10);
-            } else {
-                const cardCategory = card.getAttribute('data-category');
-                if (cardCategory === category) {
-                    card.classList.remove('hidden');
-                    setTimeout(() => card.style.opacity = '1', 10);
+            // Filtrar proyectos
+            projectItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                
+                if (filter === 'all' || category === filter) {
+                    item.style.display = 'block';
+                    item.style.opacity = '1';
                 } else {
-                    card.style.opacity = '0';
-                    setTimeout(() => card.classList.add('hidden'), 300);
+                    item.style.opacity = '0';
+                    setTimeout(() => item.style.display = 'none', 300);
                 }
-            }
+            });
         });
     });
 });

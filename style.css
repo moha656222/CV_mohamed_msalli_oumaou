@@ -246,6 +246,34 @@ body.dark .theme-toggle .icon-moon { display: none; }
 }
 
 /* ============================================
+   PARTICLES - Fondo animado premium
+   ============================================ */
+
+#particles-js {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Modo Oscuro - partículas */
+:root:not([data-theme="light"]) #particles-js {
+    background: #0d0d0d;
+}
+
+/* Modo Claro - partículas */
+:root[data-theme="light"] #particles-js {
+    background: #f0f4f8;
+}
+
+/* ============================================
    Hero Section
    ============================================ */
 .hero {

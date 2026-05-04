@@ -390,3 +390,72 @@ window.scrollToSection = scrollToSection;
 window.openCertificateModal = openCertificateModal;
 window.closeCertificateModal = closeCertificateModal;
 window.zoomCertificate = zoomCertificate;
+
+// ============================================
+// PARTICLES - Fondo animado premium
+// ============================================
+const tsParticlesScript = document.createElement('script');
+tsParticlesScript.src = 'https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js';
+tsParticlesScript.onload = () => {
+    initParticles();
+};
+document.head.appendChild(tsParticlesScript);
+
+function initParticles() {
+    const isDark = !document.documentElement.hasAttribute('data-theme') || document.documentElement.getAttribute('data-theme') === 'dark';
+    
+    const config = isDark ? {
+        background: { color: { value: '#0d0d0d' } },
+        particles: {
+            color: { value: '#ffffff' },
+            links: { color: '#ffffff', distance: 150, enable: true, opacity: 0.35, width: 1 },
+            move: { direction: 'none', enable: true, outModes: { default: 'bounce' }, random: false, speed: 1, straight: false },
+            number: { density: { enable: true, area: 800 }, value: 80 },
+            opacity: { value: 0.5 },
+            shape: { type: 'circle' },
+            size: { value: { min: 1, max: 5 } }
+        },
+        interactivity: {
+            events: {
+                onHover: { enable: true, mode: 'repulse' },
+                onClick: { enable: true, mode: 'push' },
+                resize: true
+            },
+            modes: {
+                repulse: { distance: 100, duration: 0.4 },
+                push: { quantity: 4 }
+            }
+        }
+    } : {
+        background: { color: { value: '#f0f4f8' } },
+        particles: {
+            color: { value: '#0099cc' },
+            links: { color: '#0099cc', distance: 150, enable: true, opacity: 0.3, width: 1 },
+            move: { direction: 'none', enable: true, outModes: { default: 'bounce' }, random: false, speed: 1, straight: false },
+            number: { density: { enable: true, area: 800 }, value: 80 },
+            opacity: { value: 0.55 },
+            shape: { type: 'circle' },
+            size: { value: { min: 1, max: 5 } }
+        },
+        interactivity: {
+            events: {
+                onHover: { enable: true, mode: 'repulse' },
+                onClick: { enable: true, mode: 'push' },
+                resize: true
+            },
+            modes: {
+                repulse: { distance: 100, duration: 0.4 },
+                push: { quantity: 4 }
+            }
+        }
+    };
+    
+    tsParticles.load('particles-js', config);
+}
+
+// Escuchar cambio de tema para actualizar partículas
+window.addEventListener('storage', e => {
+    if (e.key === 'theme' && typeof tsParticles !== 'undefined') {
+        setTimeout(initParticles, 100);
+    }
+});

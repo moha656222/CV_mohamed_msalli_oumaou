@@ -762,6 +762,30 @@ section {
     overflow: hidden;
 }
 
+/* Modo Claro */
+:root[data-theme="light"] .project-card-new {
+    background: linear-gradient(145deg, #ffffff, #f1f5f9);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="light"] .project-content-new h3 {
+    color: #1e293b;
+}
+
+:root[data-theme="light"] .project-content-new p {
+    color: #475569;
+}
+
+:root[data-theme="light"] .project-icon-new {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+}
+
+:root[data-theme="light"] .project-tags span {
+    background: rgba(59, 130, 246, 0.15);
+    color: #2563eb;
+}
+
 .project-card-new::before {
     content: '';
     position: absolute;
